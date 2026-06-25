@@ -25,7 +25,7 @@ export const site = {
     github: "https://github.com/example",
   },
   author: {
-    name: "AutoFlow Team",
+    name: "คุณาณัฏฐ์",
     url: "https://example.com/about",
   },
   nav: [
