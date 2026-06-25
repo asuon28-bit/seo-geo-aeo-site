@@ -1,55 +1,62 @@
 const features = [
   {
-    title: "เชื่อมต่อ 200+ บริการ",
-    description:
-      "AutoFlow เชื่อมต่อกับ Google Workspace, Microsoft 365, LINE, Slack, Shopee, Lazada และอีกกว่า 200 บริการ ผ่าน connector สำเร็จรูป",
+    title: "เชื่อมต่อ 200+ แอป",
+    description: "Gmail, Sheets, LINE, Shopee, Lazada, Slack และอีกเพียบ",
+    color: "bg-[#ffe600]",
+    icon: "🔌",
   },
   {
-    title: "สร้าง workflow แบบลากวาง",
-    description:
-      "ออกแบบ workflow ด้วย visual editor ไม่ต้องเขียนโค้ด ทีมที่ไม่ใช่นักพัฒนาก็ใช้ได้ภายใน 10 นาที",
+    title: "ลากวาง ไม่ต้องโค้ด",
+    description: "Visual editor ใช้ได้ใน 10 นาที ทีมที่ไม่ใช่ dev ก็โอเค",
+    color: "bg-[#ff4f8b] text-white",
+    icon: "🎨",
   },
   {
-    title: "ลดต้นทุนสูงสุด 70%",
-    description:
-      "ลูกค้าเฉลี่ยลดเวลางานซ้ำ ๆ ได้ 25 ชั่วโมง/สัปดาห์ ประหยัดค่าจ้างพนักงาน data entry ได้ถึง 70%",
+    title: "ประหยัด 70%",
+    description: "ลดเวลางานซ้ำเฉลี่ย 25 ชม./สัปดาห์/ทีม",
+    color: "bg-[#2b59ff] text-white",
+    icon: "⚡",
   },
   {
-    title: "Data center ในไทย",
-    description:
-      "ข้อมูลทั้งหมดถูกเก็บใน AWS Singapore + สำเนาในไทย ตาม PDPA และ ISO 27001",
+    title: "PDPA + ISO 27001",
+    description: "Data center ในไทย เข้ารหัส AES-256",
+    color: "bg-[#00d49a]",
+    icon: "🔒",
   },
   {
-    title: "รองรับภาษาไทยเต็มรูปแบบ",
-    description:
-      "UI ภาษาไทย, OCR เอกสารภาษาไทย, ใบกำกับภาษีอิเล็กทรอนิกส์ (e-Tax invoice) ตรงสรรพากร",
+    title: "ภาษาไทย 100%",
+    description: "UI ไทย, OCR ไทย, e-Tax invoice ตรงสรรพากร",
+    color: "bg-[#ff7a00] text-white",
+    icon: "🇹🇭",
   },
   {
-    title: "ทีมซัพพอร์ตคนไทย",
-    description:
-      "Support 24/7 ภาษาไทยผ่าน LINE OA และ video call ตอบกลับเฉลี่ยภายใน 15 นาที",
+    title: "ซัพพอร์ตคนไทย",
+    description: "24/7 ผ่าน LINE OA · ตอบใน 15 นาที",
+    color: "bg-[#0a0a0a] text-white",
+    icon: "💬",
   },
 ];
 
 export function Features() {
   return (
-    <section className="max-w-6xl mx-auto px-4 py-16" aria-labelledby="features-heading">
-      <h2 id="features-heading" className="text-3xl font-bold text-center text-slate-900">
-        ทำไมต้อง AutoFlow
-      </h2>
-      <p className="text-center text-slate-600 mt-3 max-w-2xl mx-auto">
-        แพลตฟอร์ม automation ที่ออกแบบสำหรับธุรกิจไทยโดยเฉพาะ
-      </p>
-      <ul className="mt-12 grid gap-6 md:grid-cols-3">
+    <section className="max-w-7xl mx-auto px-4 py-16" aria-labelledby="features-heading">
+      <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+        <h2 id="features-heading" className="display text-4xl md:text-6xl">
+          ทำไมต้อง<br />AutoFlow?
+        </h2>
+        <p className="text-sm uppercase tracking-widest text-[#1f1f1f] max-w-xs">
+          แพลตฟอร์ม automation ที่ออกแบบสำหรับ<br />ธุรกิจไทยโดยเฉพาะ
+        </p>
+      </div>
+      <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {features.map((f) => (
           <li
             key={f.title}
-            className="border border-slate-200 rounded-lg p-6 bg-white"
+            className={`${f.color} border border-black p-8 hover:-translate-y-1 transition-transform`}
           >
-            <h3 className="font-semibold text-lg text-slate-900">{f.title}</h3>
-            <p className="text-slate-600 mt-2 text-sm leading-relaxed">
-              {f.description}
-            </p>
+            <div className="text-5xl">{f.icon}</div>
+            <h3 className="display text-2xl mt-6">{f.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed font-medium">{f.description}</p>
           </li>
         ))}
       </ul>

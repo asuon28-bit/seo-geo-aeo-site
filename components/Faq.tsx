@@ -27,21 +27,35 @@ export const faqItems = [
 
 export function Faq({ items = faqItems }: { items?: typeof faqItems }) {
   return (
-    <section className="max-w-3xl mx-auto px-4 py-16" aria-labelledby="faq-heading">
-      <h2 id="faq-heading" className="text-3xl font-bold text-center text-slate-900">
-        คำถามที่พบบ่อย
+    <section className="max-w-4xl mx-auto px-4 py-20" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" className="display text-5xl md:text-6xl text-center">
+        Q&amp;A
       </h2>
-      <dl className="mt-10 space-y-4">
-        {items.map((item) => (
-          <div
+      <p className="text-center text-sm uppercase tracking-widest mt-2 text-[#1f1f1f]">
+        คำถามที่ถูกถามมากที่สุด
+      </p>
+      <dl className="mt-12 space-y-3">
+        {items.map((item, idx) => (
+          <details
             key={item.q}
-            className="border border-slate-200 rounded-lg p-5 bg-white"
+            className="group border border-black bg-white"
+            open={idx === 0}
           >
-            <dt className="font-semibold text-slate-900">{item.q}</dt>
-            <dd className="mt-2 text-slate-700 text-sm leading-relaxed">
+            <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none">
+              <dt className="font-bold text-[#0a0a0a] flex items-center gap-3">
+                <span className="display text-2xl text-[#ff4f8b]">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+                {item.q}
+              </dt>
+              <span className="display text-3xl group-open:rotate-45 transition-transform">
+                +
+              </span>
+            </summary>
+            <dd className="px-5 pb-5 text-[#1f1f1f] text-sm leading-relaxed pl-16">
               {item.a}
             </dd>
-          </div>
+          </details>
         ))}
       </dl>
     </section>
