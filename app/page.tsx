@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
+import { Marquee } from "@/components/Marquee";
+import { Trending } from "@/components/Trending";
 import { Features } from "@/components/Features";
+import { SecondHero } from "@/components/SecondHero";
 import { Pricing, plans } from "@/components/Pricing";
 import { Faq, faqItems } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
@@ -43,7 +46,10 @@ export default function HomePage() {
         ]}
       />
       <Hero />
+      <Marquee />
+      <Trending />
       <Features />
+      <SecondHero />
       <Pricing />
       <Faq />
     </>

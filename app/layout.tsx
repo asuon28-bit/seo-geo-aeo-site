@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Sans_Thai } from "next/font/google";
+import { Noto_Sans_Thai, Anton } from "next/font/google";
 import { site } from "@/lib/site";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
@@ -13,6 +13,13 @@ const notoThai = Noto_Sans_Thai({
   display: "swap",
 });
 
+const anton = Anton({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-anton",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -23,23 +30,12 @@ export const metadata: Metadata = {
   applicationName: site.name,
   authors: [{ name: site.author.name, url: site.author.url }],
   generator: "Next.js",
-  keywords: [
-    "automation",
-    "SaaS",
-    "workflow",
-    "ไทย",
-    "อัตโนมัติ",
-    "no-code",
-    "PDPA",
-    "LINE OA",
-  ],
+  keywords: ["automation", "SaaS", "workflow", "ไทย", "อัตโนมัติ", "no-code", "PDPA", "LINE OA"],
   referrer: "origin-when-cross-origin",
   creator: site.author.name,
   publisher: site.legalName,
   formatDetection: { telephone: false, email: false, address: false },
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: site.locale,
@@ -68,22 +64,18 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f172a",
+  themeColor: "#ffe600",
   width: "device-width",
   initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="th" className={notoThai.variable}>
+    <html lang="th" className={`${notoThai.variable} ${anton.variable}`}>
       <head>
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
       </head>
-      <body className="min-h-screen bg-white text-slate-900 antialiased">
+      <body className="min-h-screen bg-white text-[#0a0a0a] antialiased">
         <Nav />
         <main id="main">{children}</main>
         <Footer />
