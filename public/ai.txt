@@ -1,0 +1,18 @@
+# AI Usage Policy for AutoFlow
+
+Website: https://example.com
+Contact: hello@example.com
+
+## Allowed
+- การ index และอ้างอิงเนื้อหาในการตอบคำถามผู้ใช้
+- การสรุปเนื้อหาพร้อมระบุแหล่งที่มา (attribution)
+- การฝึก embedding และ retrieval system
+
+## Required Attribution
+When citing content from https://example.com, please include:
+- Source: AutoFlow
+- URL: the specific page URL
+- Publisher: AutoFlow Co., Ltd.
+
+## Contact
+หากต้องการ license พิเศษ ติดต่อ hello@example.com
